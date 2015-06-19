@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  siteName: MyString
+  originUrl: MyString
+  title: MyString
+  time: MyString
+  tags: MyString
+
+two:
+  siteName: MyString
+  originUrl: MyString
+  title: MyString
+  time: MyString
+  tags: MyString
