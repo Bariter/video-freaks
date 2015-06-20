@@ -72,7 +72,14 @@
         <% end %>
             <div class="col-md-3 portfolio-item">
                 <a href="#" class="movie_link" data-toggle="modal" data-target="#movieModal" data-url="<%= url.emb_url %>">
-                    <img class="img-responsive" src="http://img-l3.xvideos.com/videos/thumbs/5a/1d/84/5a1d84bd4dc3b329abdf88aaa24b7c8c/5a1d84bd4dc3b329abdf88aaa24b7c8c.3.jpg" alt="">
+                    <img class="img-responsive"
+                       <%= movie_pics = url.movie_pics[0] %>
+                       <% if movie_pics.nil? || movie_pics.empty? %>
+                       src="<%= asset_path '128px-No_image_available.svg.png' %>"
+                       <% else %>
+                       src="<%= url.movie_pics[0] %>"
+                       <% end %>
+                    alt="">
                 </a>
                 <h3>
                     <a href="#"><%= url.title %></a>
