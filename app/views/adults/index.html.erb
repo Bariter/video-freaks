@@ -72,6 +72,7 @@
         <% end %>
             <div class="col-md-3 portfolio-item">
                 <a href="#" class="movie_link" data-toggle="modal" data-target="#movieModal" data-url="<%= url.emb_url %>">
+                    <img class="img-responsive" src="<%= url_for(:controller => 'thumbnails', :action => 'get_image', :id => image_id(url.emb_url, @thumbs)) %>" alt="">
                     <img class="img-responsive"
                        <%= movie_pics = url.movie_pics[0] %>
                        <% if movie_pics.nil? || movie_pics.empty? %>
