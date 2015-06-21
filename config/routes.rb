@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     get 'page/:page', :action => :index, :on => :collection
   end
 
+  get 'image/:id' => 'thumbnails#get_image'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
