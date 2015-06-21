@@ -89,6 +89,9 @@
                    <div class="progress-bar progress-bar-success" style="width: <%= percentage(url.rate) %>"> <%= url.rate %> </div>
                    <div class="progress-bar progress-bar-danger" style="width: <%= reverse_percentage(url.rate) %>"></div>
                 </div>
+                <div class="tags">
+                   <strong>tags:</strong> <%= show_movie_tags(url.tags) %>
+                </div>
             </div>
         <% end %>
         </div>
