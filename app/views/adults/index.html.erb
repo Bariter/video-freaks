@@ -85,6 +85,10 @@
                 <h3>
                     <a href="#"><%= url.title %></a>
                 </h3>
+                <div class="progress">
+                   <div class="progress-bar progress-bar-success" style="width: <%= percentage(url.rate) %>"> <%= url.rate %> </div>
+                   <div class="progress-bar progress-bar-danger" style="width: <%= reverse_percentage(url.rate) %>"></div>
+                </div>
             </div>
         <% end %>
         </div>
