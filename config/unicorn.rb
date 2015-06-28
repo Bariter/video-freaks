@@ -1,9 +1,6 @@
-#@app_path = '/vagrant/video-freaks'
-#@app_path = '/home/vagrant/video-freaks'
 require 'etc'
 cur_user_home_dir = Etc.getpwuid.dir
 @app_path = "#{cur_user_home_dir}/video-freaks"
-puts @app_path
 
 worker_processes 2
 working_directory "#{@app_path}/"
