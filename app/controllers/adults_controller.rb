@@ -5,6 +5,8 @@ class AdultsController < ApplicationController
 
   def index
     @urls = Url.all.page params[:page]
+    @tags = Tag.all
+    @selected_url_tags = UrlTag.all
     @thumbs = Thumbnail.without(:image).all
   end
 
