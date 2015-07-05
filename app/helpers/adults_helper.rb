@@ -13,16 +13,16 @@ module AdultsHelper
     return (100 - str.to_i).to_s + "%"
   end
 
-  def show_movie_tags(tag_arys)
-    tags = "";
+  def show_movie_tags(url)
+    tags = []
 
-    return "none" if tag_arys.empty?
+    tags_ary = @selected_url_tags.find_tags(url)
 
-    tag_arys.each do |tag|
+    return 'none' if tags_ary.empty?
+    tags_ary.each do |tag|
       tags << tag
-      tags << ", "
     end
 
-    return tags.chop!;
+    return tags * ", ";
   end
 end

@@ -5,6 +5,8 @@ class AdultsController < ApplicationController
 
   def index
     @urls = Url.all.page params[:page]
+    @tags = Tag.all
+    @selected_url_tags = UrlTag.all
     @thumbs = Thumbnail.without(:image).all
   end
 
@@ -23,6 +25,7 @@ class AdultsController < ApplicationController
       mosaic:       params["mosaicflg"] === "0" ? false : true
     )
 
+    params["tags"] ||= []
     params["tags"].each do |t|
       tag = Tag.find_or_create_by(
         tag_name: t
