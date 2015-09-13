@@ -7,7 +7,8 @@ class Thumbnail
     prefix = self.url_prefix
     return false if prefix.nil? || prefix.empty?
 
-    reg = Regexp.new(prefix)
+    reg_exp_string = ".*" << prefix << ".*"
+    reg = Regexp.new(reg_exp_string)
     return reg =~ url ? true : false
   end
 end

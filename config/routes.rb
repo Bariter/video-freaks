@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   end
 
   post 'urls' => 'urls#create'
+
   get 'image/:id' => 'thumbnails#get_image'
+  post 'thumbnails' => 'thumbnails#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
