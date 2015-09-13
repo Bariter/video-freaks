@@ -6,7 +6,7 @@ class ThumbnailsController < ApplicationController
   def create
     thumb = Thumbnail.create(
       url_prefix:  params["url_prefix"],
-      image:       [params["image"]],
+      image:       BSON::Binary.new(params["image"].force_encoding(Encoding::BINARY), :old),
     )
 
     thumb.save
